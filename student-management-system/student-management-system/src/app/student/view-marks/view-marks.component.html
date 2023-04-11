@@ -1,0 +1,34 @@
+<div>
+  <h3 class="text-center">Result for {{ marks[0].semester }} th Semester</h3>
+  <table class="table table-bordered mt-5" id="semResultGrid">
+    <thead class="table-secondary">
+      <tr>
+        <th scope="col" class="text-center">#</th>
+        <th scope="col" class="text-center">Subject Code</th>
+        <th scope="col" class="text-center">Mark</th>
+        <th scope="col" class="text-center">Percentage</th>
+        <th scope="col" class="text-center">Semester</th>
+        <th scope="col" class="text-center">Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mark of marks; let i = index">
+        <td class="table-secondary text-center">{{ i + 1 }}</td>
+        <td class="text-center">{{ mark.subjectName | uppercase }}</td>
+        <td class="text-center">
+          {{ mark.mark }}
+        </td>
+        <td class="text-center">
+          {{ mark.percentage | percent }}
+        </td>
+        <td class="text-center">{{ mark.semester }}</td>
+        <td
+          class="text-center text-white"
+          [ngClass]="mark.mark < 35 ? 'bg-danger' : 'bg-success'"
+        >
+          {{ mark.result | uppercase }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

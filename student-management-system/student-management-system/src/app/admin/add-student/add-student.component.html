@@ -1,0 +1,118 @@
+<div class="container mt-5">
+  <form
+    class="container"
+    [formGroup]="studentData"
+    (ngSubmit)="handleAddStudent(studentData)"
+  >
+    <div class="row mx-2">
+      <div class="col-6">
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Student Name"
+            id="enterName"
+            name="studentName"
+            formControlName="studentName"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Date of Admission(dd/mm/yyyy)"
+            id="enterDate"
+            name="dateOfAdmission"
+            formControlName="dateOfAdmission"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your Address"
+            id="enterAddress"
+            name="address"
+            formControlName="address"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter your phone number"
+            id="enterPhoneNo"
+            name="phoneNumber"
+            formControlName="phoneNumber"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="email"
+            class="form-control"
+            placeholder="Enter your email id"
+            id="enterEmailId"
+            name="emailId"
+            formControlName="emailId"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter student parent name"
+            id="parentName"
+            name="parentName"
+            formControlName="parentName"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter student id"
+            id="studentId"
+            name="studnetId"
+            formControlName="studentId"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter student blood group"
+            id="bloodGroup"
+            name="bloodGroup"
+            formControlName="bloodGroup"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <select
+            class="form-select"
+            id="selectDepartment"
+            name="department"
+            formControlName="department"
+          >
+            <option value="" selected>Select the Department</option>
+            <option value="CSE">CSE</option>
+            <option value="ECE">ECE</option>
+            <option value="EEE">EEE</option>
+            <option value="IT">IT</option>
+            <option value="MECH">MECH</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <button
+        class="btn btn-success float-end"
+        type="submit"
+        id="addStudentButton"
+      >
+        Add Student
+      </button>
+    </div>
+  </form>
+</div>

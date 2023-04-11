@@ -1,0 +1,48 @@
+<nav class="navbar bg-dark d-flex gap-2 px-5">
+  <h3 class="navbar-brand text-white">Neo School Management</h3>
+  <button
+    type="button"
+    id="viewMark"
+    class="btn btn-primary text-white"
+    routerLink="viewMarks"
+  >
+    <strong> Student Mark Report </strong>
+  </button>
+  <button
+    type="button"
+    id="viewAttendance"
+    class="btn btn-primary text-white"
+    routerLink="viewAttendance"
+  >
+    <strong> Attendance Report </strong>
+  </button>
+  <button
+    type="button"
+    id="logout"
+    class="btn btn-danger text-white"
+    (click)="handleLogout()"
+  >
+    <strong> Logout </strong>
+  </button>
+</nav>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-3 d-flex align-items-center flex-column">
+      <img
+        class="img-thumbnail mb-5"
+        src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      />
+      <div class="border border-2 p-3">
+        <p>
+          <strong> Name: </strong>
+          {{ student.studentName | titlecase }}
+        </p>
+        <p>
+          <strong>Department:</strong>
+          {{ student.department | uppercase }}
+        </p>
+      </div>
+    </div>
+    <div class="col-9"><router-outlet></router-outlet></div>
+  </div>
+</div>

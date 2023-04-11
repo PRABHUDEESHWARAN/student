@@ -1,0 +1,36 @@
+<nav class="navbar bg-dark d-flex gap-2 px-5">
+  <h3 class="navbar-brand text-white">Neo School Management</h3>
+  <button
+    type="button"
+    id="addStudent"
+    class="btn btn-primary text-white"
+    routerLink="addStudent"
+  >
+    <strong> Add Student </strong>
+  </button>
+  <button
+    type="button"
+    id="markUpload"
+    class="btn btn-primary text-white"
+    routerLink="uploadMarks"
+  >
+    <strong> Student Mark Upload </strong>
+  </button>
+  <button
+    type="button"
+    id="attendanceUpload"
+    class="btn btn-primary text-white"
+    routerLink="uploadAttendance"
+  >
+    <strong> Attendance Upload </strong>
+  </button>
+  <button
+    type="button"
+    id="logout"
+    class="btn btn-danger text-white"
+    (click)="handleLogout()"
+  >
+    <strong> Logout </strong>
+  </button>
+</nav>
+<router-outlet></router-outlet>

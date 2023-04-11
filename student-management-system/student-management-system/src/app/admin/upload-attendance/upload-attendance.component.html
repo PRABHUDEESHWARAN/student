@@ -1,0 +1,108 @@
+<div class="container mt-5">
+  <form class="container" method="POST" (ngSubmit)="searchStudent()">
+    <div class="row my-5 d-flex justify-content-center">
+      <div class="col-3"></div>
+      <div class="col">
+        <input
+          type="text"
+          [(ngModel)]="searchStudentObj.searchStudentId"
+          name="searchStudentId"
+          class="form-control"
+          placeholder="Type student id to search"
+        />
+      </div>
+      <div class="col">
+        <button type="submit" id="searchButton" class="btn btn-primary">
+          Search
+        </button>
+      </div>
+    </div>
+  </form>
+  <form
+    *ngIf="searchStudentObj.search"
+    class="container"
+    [formGroup]="attendance"
+    method="POST"
+    (ngSubmit)="uploadMarks(attendance)"
+  >
+    <div class="row">
+      <div class="col-4 d-flex align-items-center flex-column">
+        <img
+          class="img-thumbnail border rounded"
+          src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+        />
+        <div class="border border-2 p-3">
+          <p>
+            <strong> Name </strong>
+            abc
+          </p>
+          <p>
+            <strong> Department </strong>
+            xxx
+          </p>
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="form-group mb-5">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter Number of working days for Semester"
+            id="workingDays"
+            name="workingDays"
+            formControlName="workingDays"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter Number of days present"
+            id="noOfDaysPresent"
+            name="daysPresent"
+            formControlName="daysPresent"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter Number of days absent"
+            id="noOfDaysAbsent"
+            name="daysAbsent"
+            formControlName="daysAbsent"
+          />
+        </div>
+        <div class="form-group mb-5">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter attendance percentage"
+            id="attendancepercentage"
+            name="attendancePercentage"
+            formControlName="attendancePercentage"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Enter no of holidays"
+            id="noOfHolidays"
+            name="daysHolidays"
+            formControlName="daysHolidays"
+          />
+        </div>
+      </div>
+      <div class="form-group mt-5">
+        <button
+          class="btn btn-success float-end"
+          type="submit"
+          id="updateAttendance"
+        >
+          Update Attendance
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
